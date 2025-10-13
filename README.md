@@ -1,6 +1,6 @@
+#👋 Hi there!
 <div style="display: flex; align-items: center; justify-content: center; gap: 25px; flex-wrap: wrap; text-align: left;">
   <div style="flex: 1; min-width: 250px; max-width: 600px;">
-    <h2>👋 Hi there!</h2>
     <p>
       I'm <strong>Max Berglund</strong>, a passionate <strong>Fullstack Developer</strong> with a strong interest in all things tech, from web and mobile development to tools and backend systems.<br>
       Currently studying <strong>.NET Fullstack Development</strong> at 
@@ -25,7 +25,7 @@
 
 ---
 
-### 🧠 Currently Learning
+# 🧠 Currently Learning
 <p align="left">
   <img src="https://img.shields.io/badge/Rust-000000?style=for-the-badge&logo=rust&logoColor=white" />
 </p>
@@ -34,7 +34,7 @@ Currently expanding my skills in **Rust** as part of my internship at **M8S**, f
 
 <br>
 
-### 💻 Front-End Development
+# 💻 Front-End Development
 <p align="left">
   <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white"/>
   <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white"/>
@@ -49,7 +49,7 @@ Currently expanding my skills in **Rust** as part of my internship at **M8S**, f
 
 <br>
 
-### ⚙️ Back-End & Languages
+# ⚙️ Back-End & Languages
 <p align="left">
   <img src="https://img.shields.io/badge/C%23-239120?style=for-the-badge&logo=c-sharp&logoColor=white"/>
   <img src="https://img.shields.io/badge/.NET-512BD4?style=for-the-badge&logo=dotnet&logoColor=white"/>
@@ -61,7 +61,7 @@ Currently expanding my skills in **Rust** as part of my internship at **M8S**, f
 
 <br>
 
-### ☁️ Databases & Cloud
+# ☁️ Databases & Cloud
 <p align="left">
   <img src="https://img.shields.io/badge/PostgreSQL-4169E1?style=for-the-badge&logo=postgresql&logoColor=white"/>
   <img src="https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white"/>
@@ -71,7 +71,7 @@ Currently expanding my skills in **Rust** as part of my internship at **M8S**, f
 
 <br>
 
-### 🛠️ Tools & Workflow
+# 🛠️ Tools & Workflow
 <p align="left">
   <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white"/>
   <img src="https://img.shields.io/badge/GitLab-FC6D26?style=for-the-badge&logo=gitlab&logoColor=white"/>
@@ -82,7 +82,7 @@ Currently expanding my skills in **Rust** as part of my internship at **M8S**, f
 
 <br>
 
-### 📊 GitHub Stats
+# 📊 GitHub Stats
 <div align="center">
   <img src="https://github-readme-stats.vercel.app/api?username=maxberglund2&show_icons=true&theme=radical" height="160"/>
   <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=maxberglund2&layout=compact&theme=radical" height="160"/><br>
