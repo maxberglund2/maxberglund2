@@ -86,5 +86,4 @@ Currently expanding my skills in **Rust** as part of my internship at **M8S**, f
 <div align="center">
   <img src="https://github-readme-stats.vercel.app/api?username=maxberglund2&show_icons=true&theme=radical" height="160"/>
   <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=maxberglund2&layout=compact&theme=radical" height="160"/><br>
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=maxberglund2&theme=radical" height="160"/>
 </div>
