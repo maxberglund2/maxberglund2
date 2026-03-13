@@ -27,7 +27,11 @@ Still figuring it all out, one commit at a time.
 
 ## 🧰 Tech Stack
 
-[![Tech Stack](https://img.shields.io/badge/Tech_Stack-Interactive_↗-58A6FF?style=for-the-badge)](https://maxberglund2.github.io/maxberglund2/techstack-ball.html)
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/maxberglund2/maxberglund2/output/snake-dark.svg"/>
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/maxberglund2/maxberglund2/output/snake.svg"/>
+  <img alt="contribution snake" src="https://raw.githubusercontent.com/maxberglund2/maxberglund2/output/snake.svg"/>
+</picture>
 
 **Frontend**
 
