@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Max Berglund — Tech Stack</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #0d1117;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    }
+    h1 {
+      color: #58A6FF;
+      font-size: 15px;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+      opacity: 0.7;
+    }
+    canvas {
+      display: block;
+      cursor: grab;
+      touch-action: none;
+    }
+    canvas:active { cursor: grabbing; }
+    p {
+      margin-top: 16px;
+      color: #484f58;
+      font-size: 12px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Tech Stack</h1>
+  <canvas id="c"></canvas>
+  <p>drag to spin</p>
+
+  <script>
+    const canvas = document.getElementById('c');
+    const ctx = canvas.getContext('2d');
+    const SIZE = Math.min(window.innerWidth, window.innerHeight, 520);
+    canvas.width = SIZE * devicePixelRatio;
+    canvas.height = SIZE * devicePixelRatio;
+    canvas.style.width = SIZE + 'px';
+    canvas.style.height = SIZE + 'px';
+    ctx.scale(devicePixelRatio, devicePixelRatio);
+
+    const badges = [
+      { label: 'React',        color: '#61DAFB', text: '#0a3d4a' },
+      { label: 'TypeScript',   color: '#3178C6', text: '#fff' },
+      { label: 'ASP.NET',      color: '#512BD4', text: '#fff' },
+      { label: 'C#',           color: '#239120', text: '#fff' },
+      { label: 'Rust',         color: '#CE422B', text: '#fff' },
+      { label: 'Next.js',      color: '#333',    text: '#fff' },
+      { label: 'JavaScript',   color: '#F7DF1E', text: '#1a1a00' },
+      { label: 'Node.js',      color: '#339933', text: '#fff' },
+      { label: 'Python',       color: '#3776AB', text: '#fff' },
+      { label: 'PostgreSQL',   color: '#4169E1', text: '#fff' },
+      { label: 'MongoDB',      color: '#47A248', text: '#fff' },
+      { label: 'Azure',        color: '#0078D4', text: '#fff' },
+      { label: 'CSS3',         color: '#1572B6', text: '#fff' },
+      { label: 'HTML5',        color: '#E34F26', text: '#fff' },
+      { label: 'Vite',         color: '#646CFF', text: '#fff' },
+      { label: 'PHP',          color: '#777BB4', text: '#fff' },
+      { label: 'Figma',        color: '#F24E1E', text: '#fff' },
+      { label: 'MySQL',        color: '#4479A1', text: '#fff' },
+      { label: 'React Native', color: '#61DAFB', text: '#0a3d4a' },
+      { label: 'GitHub',       color: '#484f58', text: '#fff' },
+      { label: '.NET',         color: '#512BD4', text: '#fff' },
+      { label: 'Tailwind',     color: '#38BDF8', text: '#0c2a3a' },
+    ];
+
+    const R = SIZE * 0.34;
+    const dots = badges.map((b, i) => {
+      const phi   = Math.acos(1 - 2 * (i + 0.5) / badges.length);
+      const theta = Math.PI * (1 + Math.sqrt(5)) * i;
+      return {
+        x: Math.sin(phi) * Math.cos(theta),
+        y: Math.sin(phi) * Math.sin(theta),
+        z: Math.cos(phi),
+        badge: b
+      };
+    });
+
+    let rotX = 0.3, rotY = 0.5;
+    let velX = 0.002, velY = 0.004;
+    let dragging = false, lastMX = 0, lastMY = 0;
+
+    function rotatePoint({ x, y, z }, rx, ry) {
+      const cy = Math.cos(ry), sy = Math.sin(ry);
+      const x1 = x * cy - z * sy, z1 = x * sy + z * cy;
+      const cx = Math.cos(rx), sx = Math.sin(rx);
+      return { x: x1, y: y * cx - z1 * sx, z: y * sx + z1 * cx };
+    }
+
+    function drawBadge(px, py, scale, label, color, text) {
+      const fontSize = Math.round(12 * scale);
+      if (fontSize < 7) return;
+      ctx.font = `500 ${fontSize}px -apple-system, BlinkMacSystemFont, sans-serif`;
+      const tw = ctx.measureText(label).width;
+      const padX = 9 * scale, padY = 5 * scale;
+      const bw = tw + padX * 2, bh = fontSize + padY * 2;
+      ctx.save();
+      ctx.globalAlpha = Math.max(0.25, scale * 0.95);
+      ctx.fillStyle = color;
+      ctx.beginPath();
+      ctx.roundRect(px - bw / 2, py - bh / 2, bw, bh, 4 * scale);
+      ctx.fill();
+      ctx.fillStyle = text;
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
+      ctx.fillText(label, px, py + 0.5);
+      ctx.restore();
+    }
+
+    function draw() {
+      ctx.clearRect(0, 0, SIZE, SIZE);
+      const cx = SIZE / 2, cy = SIZE / 2;
+      const projected = dots.map(d => {
+        const r = rotatePoint(d, rotX, rotY);
+        const scale = (r.z + 1.6) / 2.6;
+        return { px: cx + r.x * R, py: cy + r.y * R, scale, z: r.z, badge: d.badge };
+      });
+      projected.sort((a, b) => a.z - b.z);
+      for (const p of projected) drawBadge(p.px, p.py, p.scale, p.badge.label, p.badge.color, p.badge.text);
+    }
+
+    (function loop() {
+      if (!dragging) { rotX += velX; rotY += velY; }
+      draw();
+      requestAnimationFrame(loop);
+    })();
+
+    canvas.addEventListener('pointerdown', e => {
+      dragging = true; lastMX = e.clientX; lastMY = e.clientY;
+      velX = 0; velY = 0;
+      canvas.setPointerCapture(e.pointerId);
+    });
+    canvas.addEventListener('pointermove', e => {
+      if (!dragging) return;
+      const dx = e.clientX - lastMX, dy = e.clientY - lastMY;
+      rotY += dx * 0.008; rotX += dy * 0.008;
+      velY = dx * 0.006; velX = dy * 0.006;
+      lastMX = e.clientX; lastMY = e.clientY;
+    });
+    canvas.addEventListener('pointerup', () => { dragging = false; });
+  </script>
+</body>
+</html>
