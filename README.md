@@ -27,7 +27,7 @@ Still figuring it all out, one commit at a time.
 
 ## 🧰 Tech Stack
 
-> 👆 Click the **Interactive ↗** badge above to explore my stack as a 3D spinning ball
+[![Tech Stack](https://img.shields.io/badge/Tech_Stack-Interactive_↗-58A6FF?style=for-the-badge)](https://maxberglund2.github.io/maxberglund2/techstack-ball.html)
 
 **Frontend**
 
