@@ -14,11 +14,11 @@
 
 ## `whoami`
 
-I'm **Max Berglund** — a fullstack developer who believes the best code is written when you genuinely care about what you're building.
+I'm **Max Berglund**, a fullstack developer who believes the best code is written when you genuinely care about what you're building.
 
-Currently studying **.NET Fullstack Development** at [Chas Academy](https://chasacademy.se/), where I spend most of my time deep in **ASP.NET**, **API design**, and modern web architecture. Outside of school, I'm doing an internship at **M8S** where I've been pushing into systems-level programming with **Rust** — a language that rewards patience and punishes shortcuts.
+Currently studying **.NET Fullstack Development** at [Chas Academy](https://chasacademy.se/), where I spend most of my time deep in **ASP.NET**, **API design**, and modern web architecture. Outside of school, I'm doing an internship at **Aveno & Coneqt** pushing into systems-level programming with **Rust**, a language that rewards patience and punishes shortcuts.
 
-I'm a perfectionist by nature. I don't half-ass things, and I hold the same standard for the code I write as the products I help build. I care about the details that most people skip — clean architecture, readable code, and interfaces that actually make sense to use.
+I'm a perfectionist by nature. I don't half-ass things, and I hold the same standard for the code I write as the products I help build. I care about the details that most people skip: clean architecture, readable code, and interfaces that actually make sense to use.
 
 Still figuring it all out, one commit at a time.
 
